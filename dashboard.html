@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>Welcome {{ session.username }}</h3>
+<a href="/create" class="btn btn-primary mb-3">Create Capsule</a>
+<a href="/logout" class="btn btn-danger mb-3">Logout</a>
+
+{% for capsule in capsules %}
+<div class="card mb-3 p-3 shadow">
+<h5>{{ capsule[2] }}</h5>
+<p><strong>Unlock Date:</strong> {{ capsule[5] }}</p>
+
+{% if current_date|string >= capsule[5] %}
+<p>{{ capsule[3] }}</p>
+{% else %}
+<p class="text-danger">🔒 Locked until {{ capsule[5] }}</p>
+{% endif %}
+</div>
+{% endfor %}
+
+{% endblock %}

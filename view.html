@@ -1,0 +1,11 @@
+<h2>Capsule Details</h2>
+
+<p><strong>Open Date:</strong> {{ capsule[3] }}</p>
+
+{% if status == "unlocked" %}
+    <p><strong>Message:</strong> {{ capsule[2] }}</p>
+{% else %}
+    <p>This capsule is LOCKED 🔒</p>
+{% endif %}
+
+<a href="/">Back</a>

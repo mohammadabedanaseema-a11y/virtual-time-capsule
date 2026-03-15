@@ -1,0 +1,12 @@
+<h1>Your Time Capsules</h1>
+<a href="/create">Create New Capsule</a> |
+<a href="/logout">Logout</a>
+<hr>
+
+{% for capsule in capsules %}
+    <p>
+        Capsule ID: {{ capsule[0] }} |
+        Open Date: {{ capsule[3] }}
+        <a href="/view/{{ capsule[0] }}">View</a>
+    </p>
+{% endfor %}
